@@ -9,6 +9,8 @@ public class Wall implements Runnable {
     int y;
     Player p;
     int isHit;
+    char playercharacter = '\u263B';
+    char wallcharacter = '\u2593';
 
 
     Wall(Terminal board, int y, Player p) {
@@ -40,7 +42,7 @@ public class Wall implements Runnable {
             board.applyForegroundColor(255,255,255);
             Output.ScreenPrint(3,25,scoreOutput,board);
             Output.ScreenPrint(3,26,lifeOutput,board);
-            Output.printBoard(board);
+            Output.printBorder(board);
             for (int x = 90; x > 2; x--) {
                 board.applyForegroundColor(255,69,0);
                 if (movingHole==1)
@@ -57,12 +59,12 @@ public class Wall implements Runnable {
                 }
                 board.applyForegroundColor(255,255,255);
                 board.moveCursor(p.getX(), p.getY());
-                board.putCharacter('\u263B');
+                board.putCharacter(playercharacter);
                 board.applyForegroundColor(255,69,0);
                 for (int counter = 0; counter <= 20; counter++) {
                     if (!(counter >= hole && counter <= hole+holeSize)) {
                         board.moveCursor(x, counter);
-                        board.putCharacter('\u2588');
+                        board.putCharacter(wallcharacter);
                     }
                 }
                 try {

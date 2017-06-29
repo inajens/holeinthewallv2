@@ -9,7 +9,7 @@ public class Player implements Runnable {
     Terminal board;
     boolean running = true;
     public int hitstatus;
-    int wasHit = 0;
+    char playercharacter = '\u263B';
 
     Player(int x, int y, Terminal board) {
         this.x = x;
@@ -67,7 +67,7 @@ public class Player implements Runnable {
                 }
                 board.applyForegroundColor(255, 255, 255);
                 board.moveCursor(x, y);
-                board.putCharacter('\u263B');
+                board.putCharacter(playercharacter);
                 System.out.println(hitstatus);
                 if (!otherKeyPress && !donotremove) {
                     board.moveCursor(x, tempY);

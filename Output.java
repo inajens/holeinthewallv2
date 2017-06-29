@@ -9,7 +9,7 @@ public class Output {
             board.putCharacter(message.charAt(i));
         }
     }
-    public static void printBoard(Terminal board){
+    public static void printBorder(Terminal board){
         for(int i=0;i<92;i++){
             board.moveCursor(i, 21);
             board.putCharacter('\u2584');
