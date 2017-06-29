@@ -17,12 +17,6 @@ public class Player implements Runnable {
         this.board = board;
     }
 
-    Wall info = new Wall(board);
-
-    public void setHitStatus(int hitstatus) {
-        this.hitstatus = hitstatus;
-    }
-
     public void die() {
         board.moveCursor(x, y);
         board.putCharacter(' ');
@@ -68,7 +62,6 @@ public class Player implements Runnable {
                 board.applyForegroundColor(255, 255, 255);
                 board.moveCursor(x, y);
                 board.putCharacter(playercharacter);
-                System.out.println(hitstatus);
                 if (!otherKeyPress && !donotremove) {
                     board.moveCursor(x, tempY);
                     board.putCharacter(' ');

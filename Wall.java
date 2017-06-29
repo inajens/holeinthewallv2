@@ -19,10 +19,6 @@ public class Wall implements Runnable {
         this.p = p;
     }
 
-    Wall(Terminal board) {
-        this.board = board;
-    }
-
     public void run() {
         Random ran = new Random();
         Random ran2 = new Random();
